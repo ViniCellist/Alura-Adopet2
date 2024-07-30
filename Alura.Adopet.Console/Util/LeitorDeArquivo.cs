@@ -7,9 +7,9 @@ using Alura.Adopet.Console.Modelos;
 
 namespace Alura.Adopet.Console.Util
 {
-    internal class LeitorDeArquivo
+    public class LeitorDeArquivo
     {
-        public List<Pet> RealizaLeitura(string caminhoDoArquivoASerLido)
+        public virtual List<Pet> RealizaLeitura()
         {
             List<Pet> listaDePet = new List<Pet>();
             using (StreamReader sr = new StreamReader(caminhoDoArquivoASerLido))
