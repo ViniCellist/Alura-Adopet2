@@ -7,14 +7,14 @@ var leitorDeArquivos = new LeitorDeArquivo(caminhoDoArquivoASerLido: args[1]);
 Dictionary<string, IComando> comandosDoSistema = new()
 {
     {"help",new Help() },
-    {"import",new Import(httpClientPet, leitorDeArquivos)},
+    {"import",new Import(httpClientPet,leitorDeArquivos)},
     {"list",new List(httpClientPet) },
-    {"show",new Show() },
+    {"show",new Show(leitorDeArquivos) },
 };
 
 Console.ForegroundColor = ConsoleColor.Green;
 try
-{    
+{
     string comando = args[0].Trim();
     if (comandosDoSistema.ContainsKey(comando))
     {
@@ -24,8 +24,7 @@ try
     else
     {
         Console.WriteLine("Comando inválido!");
-    } 
-        
+    }
 }
 catch (Exception ex)
 {

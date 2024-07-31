@@ -9,8 +9,18 @@ namespace Alura.Adopet.Console.Util
 {
     public class LeitorDeArquivo
     {
+        private string caminhoDoArquivoASerLido;
+        public LeitorDeArquivo(string caminhoDoArquivoASerLido)
+        {
+            this.caminhoDoArquivoASerLido = caminhoDoArquivoASerLido;
+        }
+
         public virtual List<Pet> RealizaLeitura()
         {
+            if (string.IsNullOrEmpty(this.caminhoDoArquivoASerLido))
+            {
+                return null;
+            }
             List<Pet> listaDePet = new List<Pet>();
             using (StreamReader sr = new StreamReader(caminhoDoArquivoASerLido))
             {

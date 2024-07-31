@@ -6,7 +6,7 @@ namespace Alura.Adopet.Console.Comandos
     [DocComandoAttribute(instrucao: "help",
      documentacao: "adopet help comando que exibe informações da ajuda. \n" +
         "adopet help <NOME_COMANDO> para acessar a ajuda de um comando específico.")]
-    internal class Help:IComando
+    internal class Help : IComando
     {
         private Dictionary<string, DocComandoAttribute> docs;
 
