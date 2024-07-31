@@ -27,8 +27,4 @@
     <ProjectReference Include="..\Alura.Adopet.Console\Alura.Adopet.Console.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Builder\" />
-  </ItemGroup>
-
 </Project>
