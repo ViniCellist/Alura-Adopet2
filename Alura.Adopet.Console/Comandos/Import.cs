@@ -19,23 +19,21 @@ namespace Alura.Adopet.Console.Comandos
             this.leitor = leitor;
         }
 
-        public async Task<Result> ExecutarAsync(string[] args)
+        public async Task<Result> ExecutarAsync()
         {
-            return await this.ImportacaoArquivoPetAsync(caminhoDoArquivoDeImportacao: args[1]);
+            return await this.ImportacaoArquivoPetAsync();
         }
 
-        private async Task<Result> ImportacaoArquivoPetAsync(string caminhoDoArquivoDeImportacao)
+        private async Task<Result> ImportacaoArquivoPetAsync()
         {
             try
             {
                 List<Pet> listaDePet = leitor.RealizaLeitura();
                 foreach (var pet in listaDePet)
                 {
-                    System.Console.WriteLine(pet);
                     await clientPet.CreatePetAsync(pet);
                 }
-                System.Console.WriteLine("Importação concluída!");
-                return Result.Ok().WithSuccess(new SuccessWithPets(listaDePet));
+                return Result.Ok().WithSuccess(new SuccessWithPets(listaDePet, "Importação Realizada com Sucesso!"));
             }
             catch (Exception exception)
             {

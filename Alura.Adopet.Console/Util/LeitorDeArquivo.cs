@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Alura.Adopet.Console.Modelos;
+﻿using Alura.Adopet.Console.Modelos;
 
 namespace Alura.Adopet.Console.Util
 {
@@ -24,7 +19,6 @@ namespace Alura.Adopet.Console.Util
             List<Pet> listaDePet = new List<Pet>();
             using (StreamReader sr = new StreamReader(caminhoDoArquivoASerLido))
             {
-                System.Console.WriteLine("----- Dados a serem importados -----");
                 while (!sr.EndOfStream)
                 {
                     // separa linha usando ponto e vírgula
