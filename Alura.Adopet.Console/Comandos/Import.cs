@@ -35,12 +35,17 @@ namespace Alura.Adopet.Console.Comandos
                     await clientPet.CreatePetAsync(pet);
                 }
                 System.Console.WriteLine("Importação concluída!");
-                return Result.Ok().WithSuccess(new SucessWithPets(listaDePet));
+                return Result.Ok().WithSuccess(new SuccessWithPets(listaDePet));
             }
             catch (Exception exception)
             {
-                return Result.Fail(new Error("Importação falhou...").CausedBy(exception));
+
+                return Result.Fail(new Error("Importação falhou!").CausedBy(exception));
             }
+
+
+
+
         }
     }
 }
